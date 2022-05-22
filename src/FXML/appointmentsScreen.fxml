@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="527.0" prefWidth="715.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.appointmentsScreen">
+   <children>
+      <Label layoutX="108.0" layoutY="81.0" text="Appointment ID" textFill="WHITE" />
+      <Label layoutX="96.0" layoutY="113.0" text="Appointment Title" textFill="WHITE" />
+      <Label layoutX="58.0" layoutY="146.0" text="Appointment Description" textFill="WHITE" />
+      <Label layoutX="73.0" layoutY="180.0" text="Appointment Location" textFill="WHITE" />
+      <Label layoutX="77.0" layoutY="217.0" text="Appointment Contact" textFill="WHITE" />
+      <Label layoutX="375.0" layoutY="107.0" text="Appointment Start Date" textFill="WHITE" />
+      <Label layoutX="447.0" layoutY="146.0" text="Start Time" textFill="WHITE" />
+      <Label layoutX="449.0" layoutY="218.0" text="End Time" textFill="WHITE" />
+      <Label layoutX="377.0" layoutY="179.0" text="Appointment End Date" textFill="WHITE" />
+      <Label layoutX="126.0" layoutY="252.0" text="Customer ID" textFill="WHITE" />
+      <Label layoutX="401.0" layoutY="77.0" text="Appointment Type" textFill="WHITE" />
+      <Label fx:id="createdByText" layoutX="407.0" layoutY="349.0" text="Created By" textFill="WHITE" />
+      <TextField fx:id="apptID" editable="false" layoutX="208.0" layoutY="76.0" promptText="Appt. ID: Auto Generated" />
+      <TextField fx:id="apptTitle" layoutX="208.0" layoutY="109.0" />
+      <TextField fx:id="apptDesc" layoutX="208.0" layoutY="142.0" />
+      <TextField fx:id="apptLoc" layoutX="208.0" layoutY="176.0" />
+      <ComboBox fx:id="apptContact" layoutX="207.0" layoutY="211.0" prefWidth="150.0" />
+      <TextField fx:id="apptType" layoutX="514.0" layoutY="72.0" />
+      <DatePicker fx:id="apptStartDate" layoutX="514.0" layoutY="104.0" />
+      <ComboBox fx:id="apptStartTime" layoutX="514.0" layoutY="137.0" prefHeight="26.0" prefWidth="160.0" />
+      <DatePicker fx:id="apptEndDate" layoutX="514.0" layoutY="175.0" />
+      <ComboBox fx:id="apptEndTime" layoutX="514.0" layoutY="213.0" prefHeight="26.0" prefWidth="160.0" />
+      <TextField fx:id="customerID" layoutX="207.0" layoutY="247.0" />
+      <TextField fx:id="userID_TF" editable="false" layoutX="473.0" layoutY="345.0" />
+      <ButtonBar layoutX="407.0" layoutY="416.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#onCancel" text="Cancel">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#createAppointment" text="Save">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+        </buttons>
+      </ButtonBar>
+      <Label fx:id="apptLabel" layoutX="242.0" layoutY="14.0" text="Appointments" textFill="WHITE">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <TableView fx:id="customerTable" layoutY="297.0" prefHeight="229.0" prefWidth="399.0">
+        <columns>
+          <TableColumn fx:id="custIDCol" text="Customer ID " />
+          <TableColumn fx:id="cNameCol" prefWidth="147.0" text="Customer Name" />
+            <TableColumn fx:id="cPhoneCol" prefWidth="171.0" text="Phone Number" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
